@@ -58,12 +58,11 @@ h1,h2,h3,h4,p{margin:0}
 
 /* ---------- category bar ---------- */
 .catbar{position:sticky;top:84px;z-index:40;background:rgba(9,8,7,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
-.catbar .wrap{display:flex;justify-content:center;gap:6px;overflow-x:auto;scrollbar-width:none}
+.catbar .wrap{display:flex;justify-content:center;gap:6px;padding-top:12px;padding-bottom:12px;overflow-x:auto;scrollbar-width:none}
 .catbar .wrap::-webkit-scrollbar{display:none}
-.catbar a{flex:none;padding:18px 20px;font-family:'Cinzel',serif;font-size:12px;font-weight:600;letter-spacing:.24em;color:var(--muted);position:relative;transition:color .25s}
+.catbar a{flex:none;padding:10px 20px;border-radius:999px;border:1px solid transparent;font-family:'Cinzel',serif;font-size:12px;font-weight:600;letter-spacing:.24em;color:var(--muted);position:relative;transition:color .25s,background .25s,border-color .25s}
 .catbar a:hover{color:var(--ink)}
-.catbar a.on{color:var(--gold-l)}
-.catbar a.on::after{content:"";position:absolute;left:20px;right:20px;bottom:-1px;height:2px;background:var(--gold)}
+.catbar a.on{color:var(--gold-l);background:rgba(214,171,88,.1);border-color:var(--hair2)}
 
 /* ---------- layout ---------- */
 .shop{display:grid;grid-template-columns:minmax(0,1fr) 352px;gap:48px;align-items:start;padding-top:56px}
@@ -383,6 +382,7 @@ input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus
 }
 @media (max-width:760px){
   .wrap{padding:0 18px}
+  .shop.wrap{padding-top:28px}
   .hdr .wrap{height:70px;grid-template-columns:auto 1fr auto;gap:12px}
   .logo{order:-1}.logo img{height:46px}
   .hnav{justify-content:flex-end;gap:20px}
@@ -393,12 +393,14 @@ input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus
   .mast{padding-top:40px;padding-bottom:28px}
   .mast h1{font-size:28px;letter-spacing:.08em}
   .catbar .wrap{justify-content:flex-start}
-  .catbar a{padding:16px 14px}
+  .catbar .wrap{padding-top:10px;padding-bottom:10px}
+  .catbar a{padding:9px 14px}
   .facts{display:flex;flex-direction:column;border-radius:16px}
   .facts>div{justify-content:center}
   .facts>div+div{border-left:0;border-top:1px solid var(--hair)}
   .feat{grid-template-columns:1fr}
-  .feat .ph{min-height:190px}
+  .feat .ph{min-height:190px;margin:12px 12px 0;border-radius:3px;overflow:hidden}
+  .feat .ph::after{display:none}
   .feat .tx{padding:26px 24px}
   .dishes{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr;gap:36px}
